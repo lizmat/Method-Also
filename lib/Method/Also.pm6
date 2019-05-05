@@ -1,10 +1,10 @@
 use v6.c;
 
-module Method::Also:ver<0.0.1>:auth<cpan:ELIZABETH> {
+module Method::Also:ver<0.0.2>:auth<cpan:ELIZABETH> {
     multi sub trait_mod:<is>(Method:D \meth, :$also!) is export {
         if $also {
             if $also ~~ List {
-                meth.package.^add_method($_,meth) for @$also;
+                meth.package.^add_method(.Str,meth) for @$also;
             }
             else {
                 meth.package.^add_method($also.Str,meth);
@@ -56,7 +56,7 @@ Comments and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018-2019 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

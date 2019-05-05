@@ -2,5 +2,8 @@ Revision history for Method-Also
 
 {{$NEXT}}
 
+0.0.2  2019-05-05T20:41:50+02:00
+    - Make sure we stringify multiple also's also, spotted by Clifton Wood
+
 0.0.1  2018-08-08T23:28:46+02:00
     - Initial version
