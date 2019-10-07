@@ -47,22 +47,24 @@ module Method::Also:ver<0.0.2>:auth<cpan:ELIZABETH> {
 
     }
 
-    if $*PACKAGE.HOW ~~ Metamodel::ClassHOW {
-        $*PACKAGE.HOW does AliasableClassHOW
-            unless $*PACKAGE.HOW ~~ AliasableClassHOW
-    }
-
-    if $*PACKAGE.HOW ~~ Metamodel::ParametricRoleHOW {
-        $*PACKAGE.HOW does AliasableRoleHOW
-            unless $*PACKAGE.HOW does AliasableRoleHOW
-    }
-
-    if $also {
-        if $also ~~ List {
-            %aliases{$*PACKAGE.^name}.push: Pair.new(.Str, meth) for @$also;
+    multi sub trait_mod:<is>(Method:D \meth, :$also!) is export {
+        if $*PACKAGE.HOW ~~ Metamodel::ClassHOW {
+            $*PACKAGE.HOW does AliasableClassHOW
+                unless $*PACKAGE.HOW ~~ AliasableClassHOW
         }
-        else {
-            %aliases{$*PACKAGE.^name}.push: Pair.new($also.Str, meth);
+
+        if $*PACKAGE.HOW ~~ Metamodel::ParametricRoleHOW {
+            $*PACKAGE.HOW does AliasableRoleHOW
+                unless $*PACKAGE.HOW does AliasableRoleHOW
+        }
+
+        if $also {
+            if $also ~~ List {
+                %aliases{$*PACKAGE.^name}.push: Pair.new(.Str, meth) for @$also;
+            }
+            else {
+                %aliases{$*PACKAGE.^name}.push: Pair.new($also.Str, meth);
+            }
         }
     }
 }
