@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/lizmat/Method-Also.svg?branch=master)](https://travis-ci.org/lizmat/Method-Also)
-
 NAME
 ====
 

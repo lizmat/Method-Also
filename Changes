@@ -2,6 +2,9 @@ Revision history for Method-Also
 
 {{$NEXT}}
 
+0.0.3  2019-10-09T11:59:36+02:00
+    - Fix problem with aliasing protos in roles, provided by Xliff++
+
 0.0.2  2019-05-05T20:41:50+02:00
     - Make sure we stringify multiple also's also, spotted by Clifton Wood
 
