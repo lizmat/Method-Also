@@ -8,8 +8,7 @@ module Method::Also:ver<0.0.3>:auth<cpan:ELIZABETH> {
 
         method compose (Mu \o, :$compiler_services) is hidden-from-backtrace {
           for %aliases{o.^name}[] {
-            next unless $_;
-            o.^add_method(.key, .value);
+            o.^add_method(.key, .value) if $_;
           }
           nextsame;
         }
