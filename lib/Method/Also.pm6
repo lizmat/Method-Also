@@ -7,8 +7,10 @@ module Method::Also:ver<0.0.3>:auth<cpan:ELIZABETH> {
     role AliasableClassHOW {
 
         method compose (Mu \o, :$compiler_services) is hidden-from-backtrace {
-            o.^add_method(.key, .value) for %aliases{o.^name}[];
-            nextsame;
+          for %aliases{o.^name}[] {
+            o.^add_method(.key, .value) if $_;
+          }
+          nextsame;
         }
 
     }
@@ -18,13 +20,14 @@ module Method::Also:ver<0.0.3>:auth<cpan:ELIZABETH> {
         method specialize(Mu \r, Mu:U \obj, *@pos_args, *%named_args)
             is hidden-from-backtrace
         {
-
             obj.HOW does AliasableClassHOW unless obj.HOW ~~ AliasableClassHOW;
 
             my $*TYPE-ENV;
             my $r := callsame;
             unless %aliases-composed{r.^name} {
                 for %aliases{r.^name}[] -> $p {
+                    # cw: This should never happen, but somehow it is... 
+                    next unless $p;
                     next unless $p.value.is_dispatcher;
 
                     obj.^add_method($p.key, $p.value);
