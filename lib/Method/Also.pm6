@@ -1,6 +1,6 @@
 use v6.c;
 
-module Method::Also:ver<0.0.3>:auth<cpan:ELIZABETH> {
+module Method::Also:ver<0.0.4>:auth<cpan:ELIZABETH> {
     my %aliases;
     my %aliases-composed;
 

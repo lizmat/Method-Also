@@ -2,6 +2,9 @@ Revision history for Method-Also
 
 {{$NEXT}}
 
+0.0.4  2019-11-30T00:05:28+01:00
+    - Incorporated fix of Xliff++ for weird issue
+
 0.0.3  2019-10-09T11:59:36+02:00
     - Fix problem with aliasing protos in roles, provided by Xliff++
 
