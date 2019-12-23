@@ -2,11 +2,15 @@ Revision history for Method-Also
 
 {{$NEXT}}
 
+0.0.5  2019-12-23T13:52:34+01:00
+    - Empirically handle change in `specialize_with` API, introduced
+      sometime between 2019.11 and 2019.12
+
 0.0.4  2019-11-30T00:05:28+01:00
-    - Incorporated fix of Xliff++ for weird issue
+    - Incorporated fix of Clifton Wood++ for weird issue
 
 0.0.3  2019-10-09T11:59:36+02:00
-    - Fix problem with aliasing protos in roles, provided by Xliff++
+    - Fix problem with aliasing protos in roles, provided by Clifton Wood++
 
 0.0.2  2019-05-05T20:41:50+02:00
     - Make sure we stringify multiple also's also, spotted by Clifton Wood

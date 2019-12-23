@@ -1,6 +1,6 @@
 use v6.c;
 
-module Method::Also:ver<0.0.4>:auth<cpan:ELIZABETH> {
+module Method::Also:ver<0.0.5>:auth<cpan:ELIZABETH> {
     my %aliases;
     my %aliases-composed;
 
@@ -43,8 +43,10 @@ module Method::Also:ver<0.0.4>:auth<cpan:ELIZABETH> {
             $r;
         }
 
-        method specialize_with (Mu \obj, Mu \type_env, @pos_args) {
-            $*TYPE-ENV := type_env;
+        method specialize_with(Mu $, Mu \old_type_env, Mu \type_env, |) {
+            $*TYPE-ENV := old_type_env.^name eq 'BOOTContext'
+              ?? old_type_env
+              !! type_env;
             nextsame;
         }
 
