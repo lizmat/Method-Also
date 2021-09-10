@@ -43,4 +43,4 @@ is Bar.bar_ber(42),  'Int', "is Bar.bar_ber(42) ok";
 is Bar.bar-ber('a'), 'Str', "is Bar.bar_ber('a') ok";
 is Bar.bar-ber(42),  'Int', "is Bar.bar_ber(42) ok";
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

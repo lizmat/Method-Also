@@ -1,6 +1,6 @@
-use v6.c;
+use v6.d;
 
-module Method::Also:ver<0.0.5>:auth<cpan:ELIZABETH> {
+module Method::Also:ver<0.0.6>:auth<zef:lizmat> {
     my %aliases;
     my %aliases-composed;
 
@@ -110,17 +110,17 @@ other names for the same method.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/Method-Also .
 Comments and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018, 2019, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
 =end pod
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

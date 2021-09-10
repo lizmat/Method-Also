@@ -1,22 +1,26 @@
 {
-  "auth" : "cpan:ELIZABETH",
-  "authors" : [
+  "auth": "zef:lizmat",
+  "authors": [
     "Elizabeth Mattijsen"
   ],
-  "build-depends" : [ ],
-  "depends" : [ ],
-  "description" : "add \"is also\" trait to Methods",
-  "license" : "Artistic-2.0",
-  "name" : "Method::Also",
-  "perl" : "6.c",
-  "provides" : {
-    "Method::Also" : "lib/Method/Also.pm6"
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "add \"is also\" trait to Methods",
+  "license": "Artistic-2.0",
+  "name": "Method::Also",
+  "perl": "6.c",
+  "provides": {
+    "Method::Also": "lib/Method/Also.rakumod"
   },
-  "resources" : [ ],
-  "source-url" : "https://github.com/lizmat/Method-Also.git",
-  "tags" : [
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/Method-Also.git",
+  "tags": [
     "UTILS"
   ],
-  "test-depends" : [ ],
-  "version" : "0.0.5"
+  "test-depends": [
+  ],
+  "version": "0.0.6"
 }

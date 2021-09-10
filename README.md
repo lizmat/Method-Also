@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/lizmat/Method-Also/workflows/test/badge.svg)](https://github.com/lizmat/Method-Also/actions)
+
 NAME
 ====
 
@@ -35,14 +37,14 @@ This module adds a `is also` trait to `Method`s, allowing you to specify other n
 AUTHOR
 ======
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/Method-Also . Comments and Pull Requests are welcome.
 
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018, 2019, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
