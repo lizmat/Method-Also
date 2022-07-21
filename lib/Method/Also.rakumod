@@ -5,7 +5,7 @@ my role AliasableClassHOW {
 
     method compose (Mu \o, :$compiler_services) is hidden-from-backtrace {
       for %aliases{o.^name}[] {
-        o.^add_method(.key, .value) if $_;
+        o.^add_method(.key, .value, :!handles) if $_;
       }
       nextsame;
     }
@@ -27,7 +27,7 @@ my role AliasableRoleHOW {
                 next unless $p;
                 next unless $p.value.is_dispatcher;
 
-                obj.^add_method($p.key, $p.value);
+                obj.^add_method($p.key, $p.value, :!handles);
                 for r.^multi_methods_to_incorporate {
                     obj.^add_multi_method(
                         $p.key,
