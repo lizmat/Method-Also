@@ -1,11 +1,13 @@
 my %aliases;
 my %aliases-composed;
 
+constant %no_handles = $*RAKU.compiler.version >= v2022.06.60.ga.7.e.9.b.1938 ?? :!handles !! Empty;
+
 my role AliasableClassHOW {
 
     method compose (Mu \o, :$compiler_services) is hidden-from-backtrace {
       for %aliases{o.^name}[] {
-        o.^add_method(.key, .value) if $_;
+        o.^add_method(.key, .value, |%no_handles) if $_;
       }
       nextsame;
     }
@@ -27,7 +29,7 @@ my role AliasableRoleHOW {
                 next unless $p;
                 next unless $p.value.is_dispatcher;
 
-                obj.^add_method($p.key, $p.value);
+                obj.^add_method($p.key, $p.value, |%no_handles);
                 for r.^multi_methods_to_incorporate {
                     obj.^add_multi_method(
                         $p.key,
