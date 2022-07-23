@@ -18,9 +18,10 @@
   ],
   "source-url": "https://github.com/lizmat/Method-Also.git",
   "tags": [
-    "UTILS"
+    "UTILS",
+    "METHOD"
   ],
   "test-depends": [
   ],
-  "version": "0.0.7"
+  "version": "0.0.8"
 }
