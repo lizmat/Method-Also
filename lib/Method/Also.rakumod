@@ -80,26 +80,30 @@ Method::Also - add "is also" trait to Methods
 
 =head1 SYNOPSIS
 
-  use Method::Also;
+=begin code :lang<raku>
 
-  class Foo {
-      has $.foo;
-      method foo() is also<bar bazzy> { $!foo }
-  }
+use Method::Also;
 
-  Foo.new(foo => 42).bar;       # 42
-  Foo.new(foo => 42).bazzy;     # 42
+class Foo {
+    has $.foo;
+    method foo() is also<bar bazzy> { $!foo }
+}
 
-  # separate multi methods can have different aliases
-  class Bar {
-      multi method foo()     is also<bar>   { 42 }
-      multi method foo($foo) is also<bazzy> { $foo }
-  }
+Foo.new(foo => 42).bar;       # 42
+Foo.new(foo => 42).bazzy;     # 42
 
-  Bar.foo;        # 42
-  Bar.foo(666);   # 666
-  Bar.bar;        # 42
-  Bar.bazzy(768); # 768
+# separate multi methods can have different aliases
+class Bar {
+    multi method foo()     is also<bar>   { 42 }
+    multi method foo($foo) is also<bazzy> { $foo }
+}
+
+Bar.foo;        # 42
+Bar.foo(666);   # 666
+Bar.bar;        # 42
+Bar.bazzy(768); # 768
+
+=end code
 
 =head1 DESCRIPTION
 
@@ -119,7 +123,7 @@ deal to me!
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018, 2019, 2021, 2022 Elizabeth Mattijsen
+Copyright 2018, 2019, 2021, 2022, 2024 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
