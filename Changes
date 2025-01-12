@@ -1,6 +1,8 @@
 Revision history for Method-Also
 
 {{$NEXT}}
+
+0.0.10  2025-01-12T22:43:30+01:00
     - Add CI badge for each OS
     - Update copyright year
 
