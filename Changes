@@ -1,6 +1,8 @@
 Revision history for Method-Also
 
 {{$NEXT}}
+    - Add CI badge for each OS
+    - Update copyright year
 
 0.0.9  2024-06-25T11:57:36+02:00
     - Modernize test file extension
